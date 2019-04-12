@@ -3,6 +3,7 @@ package database.model;
 public class Assiduidade {
     private int codigo_matricula;
     private String data_entrada;
+    String teste;
 
     public int getCodigo_matricula() {
         return codigo_matricula;

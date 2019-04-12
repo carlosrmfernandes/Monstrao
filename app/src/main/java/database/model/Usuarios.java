@@ -3,6 +3,7 @@ package database.model;
 public class Usuarios {
     private String usuario;
     private String perfil;
+    String teste;
 
     public String getUsuario() {
         return usuario;

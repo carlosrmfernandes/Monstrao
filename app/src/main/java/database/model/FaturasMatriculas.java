@@ -6,6 +6,7 @@ public class FaturasMatriculas {
     private double valor;
     private  String data_pagamento;
     private String data_cancelamento;
+    String teste;
 
 
     public int getFaturas_matriculas() {
