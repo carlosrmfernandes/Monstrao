@@ -1,9 +1,32 @@
 package database.model;
 
 public class Usuarios {
+
+    private static final String
+            TABELA_NAME = "usuario";
+
+    private static final String
+            COLUNA_ID = "_id",
+            COLUNA_USARIO = "usuario",
+            COLUNA_PERFIL = "perfil";
+
+    public static final String
+            CREAT_TABLE =
+            "create table" + TABELA_NAME
+                    + "("
+                    + COLUNA_ID + "integer primary kay autoincrement,"
+                    + COLUNA_USARIO + " text not null,"
+                    + COLUNA_PERFIL + " text not null,"
+                    + ");";
+
+    public static final String
+
+            DROP_TABLE = " drop table if exists" + TABELA_NAME + ";";
+
+
     private String usuario;
     private String perfil;
-    String teste;
+
 
     public String getUsuario() {
         return usuario;
@@ -21,3 +44,8 @@ public class Usuarios {
         this.perfil = perfil;
     }
 }
+
+
+
+
+
