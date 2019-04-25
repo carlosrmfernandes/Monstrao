@@ -5,17 +5,19 @@ import android.content.Context;
 
 import java.util.List;
 
+import database.db.DBOpenHelper;
 import database.model.Modalidades;
 
 public class ModalidadesDAO extends AbstrataDAO{
 
     private final String[]
     colunas = {
-
+        Modalidades.COLUNA_ID,
+        Modalidades.COLUNA_MODALIDAE
     };
 
     public ModalidadesDAO(Context context){
-
+        db_helper = new DBOpenHelper(context);
     }
 
     public int Insert(){

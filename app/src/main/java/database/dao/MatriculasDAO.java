@@ -5,17 +5,24 @@ import android.content.Context;
 
 import java.util.List;
 
+import database.db.DBOpenHelper;
 import database.model.MatriculaModalidades;
+import database.model.Matriculas;
 
 public class MatriculasDAO extends AbstrataDAO{
 
     private final String[]
     colunas = {
-
+            Matriculas.COLUNA_ID,
+            Matriculas.COLUNA_CODIGOMATICULA,
+            Matriculas.COLUNA_CODIGOALUNO,
+            Matriculas.COLUNA_DATAMATRICULA,
+            Matriculas.COLUNA_DATAVENCIMENTO,
+            Matriculas.COLUNA_DATAENCERRAMENTO,
     };
 
     public MatriculasDAO(Context context){
-
+        db_helper = new DBOpenHelper(context);
     }
 
     public int Insert(){

@@ -4,7 +4,7 @@ public class Matriculas {
     private static final String
             TABELA_NAME = "planos";
 
-    private static final String
+    public static final String
 
             COLUNA_ID = "_id",
             COLUNA_CODIGOMATICULA = "codigo matricula",
