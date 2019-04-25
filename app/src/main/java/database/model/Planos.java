@@ -5,8 +5,7 @@ public class Planos {
     private static final String
             TABELA_NAME = "planos";
 
-    private static final String
-
+    public static final String
             COLUNA_ID = "_id",
             COLUNA_MODALIDAE = "modalidade",
             COLUNA_PLANO = "plano",

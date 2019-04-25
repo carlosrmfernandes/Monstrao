@@ -5,7 +5,7 @@ public class Usuarios {
     private static final String
             TABELA_NAME = "usuario";
 
-    private static final String
+    public static final String
             COLUNA_ID = "_id",
             COLUNA_USARIO = "usuario",
             COLUNA_PERFIL = "perfil";

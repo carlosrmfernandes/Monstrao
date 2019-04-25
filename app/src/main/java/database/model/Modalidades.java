@@ -4,7 +4,7 @@ public class Modalidades {
     private static final String
             TABELA_NAME = "modalidades";
 
-    private static final String
+    public static final String
 
             COLUNA_ID = "_id",
             COLUNA_MODALIDAE = "modalidade";
