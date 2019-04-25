@@ -1,9 +1,34 @@
 package database.model;
 
 public class Assiduidade {
+
+    private static final String
+            TABELA_NOME = "assiduidade";
+
+    private static final String
+            COLUNA_ID = "_id",
+            COLUNA_CODIGO_MaTRICULA = "codigo_matricula",
+            COLUNA_DATA_ENTRADA = "data_entrada";
+
+
+    public static final String
+            CREATE_TABLE =
+            "create table" + TABELA_NOME
+                    + "("
+                    + COLUNA_ID + "integer primary key autoincrement,"
+                    + COLUNA_CODIGO_MaTRICULA + "text not null,"
+                    + COLUNA_DATA_ENTRADA + "text not null,"
+                    + ");";
+
+    public static final String
+            Drop_TABLE = "drop table if exists " + TABELA_NOME + ";";
+
+
+
+
     private int codigo_matricula;
     private String data_entrada;
-    String teste;
+
 
     public int getCodigo_matricula() {
         return codigo_matricula;
