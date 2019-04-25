@@ -1,22 +1,72 @@
 package database.model;
 
 public class Alunos {
-    private  String codigo_aluno;
-    private  String nome;
-    private  String data_nascimento;
-    private  String sexo;
-    private  String telefone;
-    private  String celular ;
-    private  String email;
-    private  String observacao;
-    private  String endereco;
-    private  String numero;
-    private  String complemento;
-    private  String bairro;
-    private  int cidade;
-    private  int estado;
-    private  int pais;
-    private  String cep;
+
+    private static final String
+            TABELA_NOME = "pessoa";
+
+    private static final String
+            COLUNA_ID = "_id",
+            COLUNA_CODIGO_ALUNO = "codigo_aluno",
+            COLUNA_NOME = "nome",
+            COLUNA_DATA_NASCIMENTO = "data_nascimento",
+            COLUNA_SEXO = "sexo",
+            COLUNA_TELEFONE = "telefone",
+            COLUNA_CELULAR = "celular",
+            COLUNA_EMAIL = "email",
+            COLUNA_OBSERVACAO = "observacao",
+            COLUNA_ENDERECO = "endereco",
+            COLUNA_NUMERO = "numero",
+            COLUNA_COMPLEMENTO = "complemento",
+            COLUNA_BAIRRO = "bairro",
+            COLUNA_CIDADE = "cidade",
+            COLUNA_ESTADO = "estado",
+            COLUNA_PAIS = "pais",
+            COLUNA_CEP = "cep";
+
+    public static final String
+            CREATE_TABLE =
+            "create table" + TABELA_NOME
+                    + "("
+                    + COLUNA_ID + "integer primary key autoincrement,"
+                    + COLUNA_CODIGO_ALUNO + "text not null,"
+                    + COLUNA_NOME + "text not null,"
+                    + COLUNA_DATA_NASCIMENTO + "text not null,"
+                    + COLUNA_SEXO + "text not null,"
+                    + COLUNA_TELEFONE + "text not null,"
+                    + COLUNA_CELULAR + "text not null,"
+                    + COLUNA_EMAIL + "text not null,"
+                    + COLUNA_OBSERVACAO + "text not null,"
+                    + COLUNA_ENDERECO + "text not null,"
+                    + COLUNA_NUMERO + "text not null,"
+                    + COLUNA_COMPLEMENTO + "text not null,"
+                    + COLUNA_BAIRRO + "text not null,"
+                    + COLUNA_CIDADE + "text not null,"
+                    + COLUNA_ESTADO + "text not null,"
+                    + COLUNA_PAIS + "text not null,"
+                    + COLUNA_CEP + "text not null,"
+                    + ");";
+
+    public static final String
+            Drop_TABLE = "drop table if exists " + TABELA_NOME + ";";
+
+
+    private String codigo_aluno;
+    private String nome;
+    private String data_nascimento;
+    private String sexo;
+    private String telefone;
+    private String celular;
+    private String email;
+    private String observacao;
+    private String endereco;
+    private String numero;
+    private String complemento;
+    private String bairro;
+    private int cidade;
+    private int estado;
+    private int pais;
+    private String cep;
 
 
     public String getCodigo_aluno() {
