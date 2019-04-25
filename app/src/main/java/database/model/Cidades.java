@@ -5,7 +5,7 @@ public class Cidades {
     private static final String
             TABELA_NOME = "cidade";
 
-    private static final String
+    public static final String
             COLUNA_ID = "_id",
             COLUNA_CIDADE = "cidade",
             COLUNA_ESTADO= "estado",

@@ -5,7 +5,7 @@ public class Alunos {
     private static final String
             TABELA_NOME = "pessoa";
 
-    private static final String
+    public static final String
             COLUNA_ID = "_id",
             COLUNA_CODIGO_ALUNO = "codigo_aluno",
             COLUNA_NOME = "nome",

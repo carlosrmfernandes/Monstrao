@@ -5,7 +5,7 @@ public class Assiduidade {
     private static final String
             TABELA_NOME = "assiduidade";
 
-    private static final String
+    public static final String
             COLUNA_ID = "_id",
             COLUNA_CODIGO_MaTRICULA = "codigo_matricula",
             COLUNA_DATA_ENTRADA = "data_entrada";
