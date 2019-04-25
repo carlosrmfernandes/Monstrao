@@ -12,7 +12,6 @@ public abstract class AbstrataDAO {
 
     protected  final void close(){
 
-
     }
 
 }
