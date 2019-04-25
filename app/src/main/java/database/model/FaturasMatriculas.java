@@ -1,12 +1,39 @@
 package database.model;
 
 public class FaturasMatriculas {
+
+    private static final String
+            TABELA_NOME = "faturas_matriculas";
+
+    private static final String
+            COLUNA_ID = "_id",
+            COLUNA_FATURA_MATRICULA = "faturas_matriculas",
+            COLUNA_DATA_VENCIMENTO= "data_vencimento",
+            COLUNA_VALOR = "valor",
+            COLUNA_DATA_PAGAMENTO= "data_pagamento",
+            COLUNA_DATA_CANCELAMENTO= "data_cancelamento";
+
+
+    public static final String
+            CREATE_TABLE =
+            "create table" + TABELA_NOME
+                    + "("
+                    + COLUNA_ID + "integer primary key autoincrement,"
+                    + COLUNA_FATURA_MATRICULA + "text not null,"
+                    + COLUNA_DATA_VENCIMENTO+ "text not null,"
+                    + COLUNA_VALOR+ "text not null,"
+                    + COLUNA_DATA_PAGAMENTO+ "text not null,"
+                    + COLUNA_DATA_CANCELAMENTO+ "text not null,"
+                    + ");";
+
+    public static final String
+            Drop_TABLE = "drop table if exists " + TABELA_NOME + ";";
+
     private int faturas_matriculas;
     private String data_vencimento;
     private double valor;
     private  String data_pagamento;
     private String data_cancelamento;
-    String teste;
 
 
     public int getFaturas_matriculas() {

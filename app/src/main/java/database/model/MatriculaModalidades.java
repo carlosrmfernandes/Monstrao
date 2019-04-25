@@ -1,6 +1,36 @@
 package database.model;
 
 public class MatriculaModalidades {
+
+    private static final String
+            TABELA_NOME = "matricula_modalidade";
+
+    private static final String
+            COLUNA_ID = "_id",
+            COLUNA_CODIGO_MATRICULA = "codigo_matricula",
+            COLUNA_MODALIDADE= "modalidade",
+            COLUNA_PLANO = "plano",
+            COLUNA_DATA_INICIO= "data_inicio",
+            COLUNA_DATA_FIM= "data_fim";
+
+
+    public static final String
+            CREATE_TABLE =
+            "create table" + TABELA_NOME
+                    + "("
+                    + COLUNA_ID + "integer primary key autoincrement,"
+                    + COLUNA_CODIGO_MATRICULA+ "text not null,"
+                    + COLUNA_MODALIDADE+ "text not null,"
+                    + COLUNA_PLANO+ "text not null,"
+                    + COLUNA_DATA_INICIO+ "text not null,"
+                    + COLUNA_DATA_FIM+ "text not null,"
+                    + ");";
+
+    public static final String
+            Drop_TABLE = "drop table if exists " + TABELA_NOME + ";";
+
+
+
     private int codigo_matricula;
     private String modalidade;
     private String  graduação;
