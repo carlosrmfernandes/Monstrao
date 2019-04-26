@@ -1,5 +1,6 @@
 package database.dao;
 
+import android.content.ContentValues;
 import android.content.Context;
 
 import java.util.List;
@@ -23,8 +24,21 @@ public class FaturasMatriculasDAO extends  AbstrataDAO {
         db_helper = new DBOpenHelper(ao_Context);
     }
 
-    public int Insert(){
-        return 0;
+    public void Insert(FaturasMatriculas faturasMatriculas){
+
+        ContentValues value = new ContentValues();
+        value.put(FaturasMatriculas.COLUNA_DATA_CANCELAMENTO, faturasMatriculas.getData_cancelamento());
+        value.put(FaturasMatriculas.COLUNA_DATA_PAGAMENTO, faturasMatriculas.getData_pagamento());
+        value.put(FaturasMatriculas.COLUNA_DATA_VENCIMENTO, faturasMatriculas.getData_vencimento());
+        value.put(FaturasMatriculas.COLUNA_FATURA_MATRICULA, faturasMatriculas.getFaturas_matriculas());
+        value.put(FaturasMatriculas.COLUNA_VALOR, faturasMatriculas.getValor());
+
+        open();
+
+        db.insert(FaturasMatriculas.TABELA_NOME, null, value);
+
+        close();
+
     }
     public int Delete(){
         return 0;

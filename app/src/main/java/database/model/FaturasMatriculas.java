@@ -2,7 +2,7 @@ package database.model;
 
 public class FaturasMatriculas {
 
-    private static final String
+    public static final String
             TABELA_NOME = "faturas_matriculas";
 
     public static final String

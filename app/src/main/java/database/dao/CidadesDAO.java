@@ -1,6 +1,8 @@
 package database.dao;
 
+import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 
 import database.db.DBOpenHelper;
 import database.model.Cidades;
@@ -21,8 +23,17 @@ public class CidadesDAO extends  AbstrataDAO{
         db_helper = new DBOpenHelper(ao_Context);
     }
 
-    public int Insert(){
-        return 0;
+    public void Insert(Cidades cidades){
+        ContentValues value = new ContentValues();
+        value.put(Cidades.COLUNA_CIDADE, cidades.getCidade());
+        value.put(Cidades.COLUNA_ESTADO, cidades.getEstado());
+        value.put(Cidades.COLUNA_PAIS, cidades.getPais());
+
+        open();
+
+        db.insert(Cidades.TABELA_NOME, null,value);
+
+        close();
     }
     public int Delete(){
         return 0;
@@ -33,5 +44,6 @@ public class CidadesDAO extends  AbstrataDAO{
     public  List<Cidades> Select(){
         return null;
     }
+
 
 }

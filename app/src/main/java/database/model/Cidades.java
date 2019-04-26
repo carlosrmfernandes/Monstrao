@@ -2,7 +2,7 @@ package database.model;
 
 public class Cidades {
 
-    private static final String
+    public static final String
             TABELA_NOME = "cidade";
 
     public static final String
