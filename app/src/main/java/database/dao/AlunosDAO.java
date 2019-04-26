@@ -1,5 +1,6 @@
 package database.dao;
 
+import android.content.ContentValues;
 import android.content.Context;
 
 import database.db.DBOpenHelper;
@@ -37,8 +38,28 @@ public class AlunosDAO extends AbstrataDAO {
 
     }
 
-    public int Insert(){
-        return 0;
+    public void Insert(final Alunos alunos){
+        ContentValues values = new ContentValues();
+        values.put(Alunos.COLUNA_CODIGO_ALUNO, alunos.getCodigo_aluno());
+        values.put(Alunos.COLUNA_CODIGO_ALUNO, alunos.getCodigo_aluno());
+        values.put(Alunos.COLUNA_CODIGO_ALUNO, alunos.getCodigo_aluno());
+        values.put(Alunos.COLUNA_CODIGO_ALUNO, alunos.getCodigo_aluno());
+        values.put(Alunos.COLUNA_CODIGO_ALUNO, alunos.getCodigo_aluno());
+        values.put(Alunos.COLUNA_CODIGO_ALUNO, alunos.getCodigo_aluno());
+        values.put(Alunos.COLUNA_CODIGO_ALUNO, alunos.getCodigo_aluno());
+        values.put(Alunos.COLUNA_CODIGO_ALUNO, alunos.getCodigo_aluno());
+        values.put(Alunos.COLUNA_CODIGO_ALUNO, alunos.getCodigo_aluno());
+        values.put(Alunos.COLUNA_CODIGO_ALUNO, alunos.getCodigo_aluno());
+        values.put(Alunos.COLUNA_CODIGO_ALUNO, alunos.getCodigo_aluno());
+        values.put(Alunos.COLUNA_CODIGO_ALUNO, alunos.getCodigo_aluno());
+        values.put(Alunos.COLUNA_CODIGO_ALUNO, alunos.getCodigo_aluno());
+        values.put(Alunos.COLUNA_CODIGO_ALUNO, alunos.getCodigo_aluno());
+        values.put(Alunos.COLUNA_CODIGO_ALUNO, alunos.getCodigo_aluno());
+
+        open();
+        db.insert(Alunos.TABELA_NOME, null, values);
+        close();
+
     }
     public int Delete(){
         return 0;

@@ -2,7 +2,7 @@ package database.model;
 
 public class Alunos {
 
-    private static final String
+    public static final String
             TABELA_NOME = "pessoa";
 
     public static final String
