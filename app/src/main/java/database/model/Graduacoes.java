@@ -2,14 +2,14 @@ package database.model;
 
 public class Graduacoes {
 
-    private static final String
+    public static final String
             TABELA_NOME = "cidade";
 
     public static final String
             COLUNA_ID = "_id",
-            COLUNA_CIDADE = "cidade",
-            COLUNA_ESTADO= "estado",
-            COLUNA_PAIS = "pais";
+            MODALIDADE = "cidade",
+            GRADUACAO= "estado";
+
 
 
     public static final String
@@ -17,9 +17,8 @@ public class Graduacoes {
             "create table" + TABELA_NOME
                     + "("
                     + COLUNA_ID + "integer primary key autoincrement,"
-                    + COLUNA_CIDADE + "text not null,"
-                    + COLUNA_ESTADO+ "text not null,"
-                    + COLUNA_PAIS+ "text not null,"
+                    + MODALIDADE + "text not null,"
+                    + GRADUACAO+ "text not null,"
                     + ");";
 
     public static final String

@@ -2,8 +2,8 @@ package database.model;
 
 public class Usuarios {
 
-    private static final String
-            TABELA_NAME = "usuario";
+    public static final String
+            TABELA_NOME = "usuario";
 
     public static final String
             COLUNA_ID = "_id",
@@ -12,7 +12,7 @@ public class Usuarios {
 
     public static final String
             CREAT_TABLE =
-            "create table" + TABELA_NAME
+            "create table" + TABELA_NOME
                     + "("
                     + COLUNA_ID + "integer primary kay autoincrement,"
                     + COLUNA_USARIO + " text not null,"
@@ -21,7 +21,7 @@ public class Usuarios {
 
     public static final String
 
-            DROP_TABLE = " drop table if exists" + TABELA_NAME + ";";
+            DROP_TABLE = " drop table if exists" + TABELA_NOME + ";";
 
 
     private String usuario;

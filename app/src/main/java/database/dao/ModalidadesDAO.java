@@ -1,6 +1,7 @@
 package database.dao;
 
 
+import android.content.ContentValues;
 import android.content.Context;
 
 import java.util.List;
@@ -20,8 +21,17 @@ public class ModalidadesDAO extends AbstrataDAO{
         db_helper = new DBOpenHelper(context);
     }
 
-    public int Insert(){
-        return 0;
+    public void Insert(Modalidades modalidades){
+
+        ContentValues value = new ContentValues();
+        value.put(Modalidades.COLUNA_MODALIDAE, modalidades.getModalidade());
+
+        open();
+
+        db.insert(Modalidades.TABELA_NOME, null, value);
+
+        close();
+
     }
 
     public int Delete(){

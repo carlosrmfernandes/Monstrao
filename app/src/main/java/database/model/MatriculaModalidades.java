@@ -2,7 +2,7 @@ package database.model;
 
 public class MatriculaModalidades {
 
-    private static final String
+    public static final String
             TABELA_NOME = "matricula_modalidade";
 
     public static final String
@@ -11,7 +11,8 @@ public class MatriculaModalidades {
             COLUNA_MODALIDADE= "modalidade",
             COLUNA_PLANO = "plano",
             COLUNA_DATA_INICIO= "data_inicio",
-            COLUNA_DATA_FIM= "data_fim";
+            COLUNA_DATA_FIM= "data_fim",
+            COLUNA_GRADUACAO= "graduacao";
 
 
     public static final String
@@ -24,6 +25,7 @@ public class MatriculaModalidades {
                     + COLUNA_PLANO+ "text not null,"
                     + COLUNA_DATA_INICIO+ "text not null,"
                     + COLUNA_DATA_FIM+ "text not null,"
+                    + COLUNA_GRADUACAO+ "text not null,"
                     + ");";
 
     public static final String
@@ -33,7 +35,7 @@ public class MatriculaModalidades {
 
     private int codigo_matricula;
     private String modalidade;
-    private String  graduação;
+    private String  graduacao;
     private String  plano;
     private String  data_inicio;
     private String  data_fim;
@@ -55,12 +57,12 @@ public class MatriculaModalidades {
         this.modalidade = modalidade;
     }
 
-    public String getGraduação() {
-        return graduação;
+    public String getGraduacao() {
+        return graduacao;
     }
 
-    public void setGraduação(String graduação) {
-        this.graduação = graduação;
+    public void setGraduacao(String graduacao) {
+        this.graduacao = graduacao;
     }
 
     public String getPlano() {

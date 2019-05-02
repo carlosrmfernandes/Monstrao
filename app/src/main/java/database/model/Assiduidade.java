@@ -2,7 +2,7 @@ package database.model;
 
 public class Assiduidade {
 
-    private static final String
+    public static final String
             TABELA_NOME = "assiduidade";
 
     public static final String

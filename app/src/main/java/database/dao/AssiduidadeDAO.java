@@ -1,5 +1,6 @@
 package database.dao;
 
+import android.content.ContentValues;
 import android.content.Context;
 
 import database.db.DBOpenHelper;
@@ -20,8 +21,14 @@ public class AssiduidadeDAO extends  AbstrataDAO {
         db_helper = new DBOpenHelper(ao_Context);
     }
 
-    public int Insert(){
-        return 0;
+    public void Insert(Assiduidade assiduidade){
+        ContentValues values = new ContentValues();
+        values.put(Assiduidade.COLUNA_CODIGO_MaTRICULA, assiduidade.getCodigo_matricula());
+        values.put(Assiduidade.COLUNA_DATA_ENTRADA, assiduidade.getData_entrada());
+
+        open();
+        db.insert(Assiduidade.TABELA_NOME, null, values);
+        close();
     }
     public int Delete(){
         return 0;

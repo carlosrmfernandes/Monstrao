@@ -1,6 +1,7 @@
 package database.dao;
 
 
+import android.content.ContentValues;
 import android.content.Context;
 
 import java.util.List;
@@ -23,10 +24,19 @@ public class PlanosDAO extends AbstrataDAO{
         db_helper = new DBOpenHelper(context);
     }
 
-    public int Insert(){
-        return 0;
-    }
+    public void Insert(Planos planos){
 
+        ContentValues value = new ContentValues();
+        value.put(Planos.COLUNA_MODALIDAE, planos.getModalidade());
+        value.put(Planos.COLUNA_PLANO, planos.getPlano());
+        value.put(Planos.COLUNA_VALORMENSAL, planos.getValor_mensal());
+
+        open();
+
+        db.insert(Planos.TABELA_NOME, null,value);
+
+        close();
+    }
     public int Delete(){
         return 0;
     }

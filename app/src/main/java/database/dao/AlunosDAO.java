@@ -41,20 +41,21 @@ public class AlunosDAO extends AbstrataDAO {
     public void Insert(final Alunos alunos){
         ContentValues values = new ContentValues();
         values.put(Alunos.COLUNA_CODIGO_ALUNO, alunos.getCodigo_aluno());
-        values.put(Alunos.COLUNA_CODIGO_ALUNO, alunos.getCodigo_aluno());
-        values.put(Alunos.COLUNA_CODIGO_ALUNO, alunos.getCodigo_aluno());
-        values.put(Alunos.COLUNA_CODIGO_ALUNO, alunos.getCodigo_aluno());
-        values.put(Alunos.COLUNA_CODIGO_ALUNO, alunos.getCodigo_aluno());
-        values.put(Alunos.COLUNA_CODIGO_ALUNO, alunos.getCodigo_aluno());
-        values.put(Alunos.COLUNA_CODIGO_ALUNO, alunos.getCodigo_aluno());
-        values.put(Alunos.COLUNA_CODIGO_ALUNO, alunos.getCodigo_aluno());
-        values.put(Alunos.COLUNA_CODIGO_ALUNO, alunos.getCodigo_aluno());
-        values.put(Alunos.COLUNA_CODIGO_ALUNO, alunos.getCodigo_aluno());
-        values.put(Alunos.COLUNA_CODIGO_ALUNO, alunos.getCodigo_aluno());
-        values.put(Alunos.COLUNA_CODIGO_ALUNO, alunos.getCodigo_aluno());
-        values.put(Alunos.COLUNA_CODIGO_ALUNO, alunos.getCodigo_aluno());
-        values.put(Alunos.COLUNA_CODIGO_ALUNO, alunos.getCodigo_aluno());
-        values.put(Alunos.COLUNA_CODIGO_ALUNO, alunos.getCodigo_aluno());
+        values.put(Alunos.COLUNA_NOME, alunos.getNome());
+        values.put(Alunos.COLUNA_DATA_NASCIMENTO, alunos.getData_nascimento());
+        values.put(Alunos.COLUNA_SEXO, alunos.getSexo());
+        values.put(Alunos.COLUNA_TELEFONE, alunos.getTelefone());
+        values.put(Alunos.COLUNA_CELULAR, alunos.getCelular());
+        values.put(Alunos.COLUNA_EMAIL, alunos.getEmail());
+        values.put(Alunos.COLUNA_OBSERVACAO, alunos.getObservacao());
+        values.put(Alunos.COLUNA_ENDERECO, alunos.getEndereco());
+        values.put(Alunos.COLUNA_NUMERO, alunos.getNumero());
+        values.put(Alunos.COLUNA_COMPLEMENTO, alunos.getComplemento());
+        values.put(Alunos.COLUNA_BAIRRO, alunos.getBairro());
+        values.put(Alunos.COLUNA_CIDADE, alunos.getCidade());
+        values.put(Alunos.COLUNA_ESTADO, alunos.getEstado());
+        values.put(Alunos.COLUNA_PAIS, alunos.getPais());
+        values.put(Alunos.COLUNA_CEP, alunos.getCep());
 
         open();
         db.insert(Alunos.TABELA_NOME, null, values);

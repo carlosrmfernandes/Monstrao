@@ -1,6 +1,7 @@
 package database.dao;
 
 
+import android.content.ContentValues;
 import android.content.Context;
 
 import java.util.List;
@@ -21,8 +22,18 @@ public class UsuariosDAO extends AbstrataDAO{
         db_helper = new DBOpenHelper(context);
     }
 
-    public int Insert(){
-        return 0;
+    public void Insert(Usuarios usuarios){
+
+        ContentValues value = new ContentValues();
+        value.put(Usuarios.COLUNA_USARIO, usuarios.getUsuario());
+        value.put(Usuarios.COLUNA_PERFIL, usuarios.getPerfil());
+
+
+        open();
+
+        db.insert(Usuarios.TABELA_NOME, null,value);
+
+        close();
     }
 
     public int Delete(){

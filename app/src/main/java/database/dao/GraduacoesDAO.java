@@ -1,5 +1,6 @@
 package database.dao;
 
+import android.content.ContentValues;
 import android.content.Context;
 
 import java.util.List;
@@ -11,17 +12,24 @@ public class GraduacoesDAO extends  AbstrataDAO{
 
     private final String [] colunas =
             {
-                    Graduacoes.COLUNA_CIDADE,
-                    Graduacoes.COLUNA_ESTADO,
+                    Graduacoes.GRADUACAO,
+                    Graduacoes.MODALIDADE,
                     Graduacoes.COLUNA_ID,
-                    Graduacoes.COLUNA_PAIS
             };
     public  GraduacoesDAO (Context ao_Context){
         db_helper = new DBOpenHelper(ao_Context);
     }
 
-    public int Insert(){
-        return 0;
+    public void Insert(Graduacoes graduacoes){
+        ContentValues value = new ContentValues();
+        value.put(Graduacoes.GRADUACAO, graduacoes.getGraduacao());
+        value.put(Graduacoes.MODALIDADE, graduacoes.getModalidade());
+
+        open();
+
+        db.insert(Graduacoes.TABELA_NOME, null,value);
+
+        close();
     }
     public int Delete(){
         return 0;

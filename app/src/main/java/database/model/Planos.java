@@ -2,8 +2,8 @@ package database.model;
 
 public class Planos {
 
-    private static final String
-            TABELA_NAME = "planos";
+    public static final String
+            TABELA_NOME = "planos";
 
     public static final String
             COLUNA_ID = "_id",
@@ -14,7 +14,7 @@ public class Planos {
 
     public static final String
             CREAT_TABLE =
-            "create table" + TABELA_NAME
+            "create table" + TABELA_NOME
                     + "("
                     + COLUNA_ID + "integer primary kay autoincrement,"
                     + COLUNA_MODALIDAE + " text not null,"
@@ -24,7 +24,7 @@ public class Planos {
 
     public static final String
 
-            DROP_TABLE = " drop table if exists" + TABELA_NAME + ";";
+            DROP_TABLE = " drop table if exists" + TABELA_NOME + ";";
 
 
     private String modalidade;

@@ -1,6 +1,7 @@
 package database.dao;
 
 
+import android.content.ContentValues;
 import android.content.Context;
 
 import java.util.List;
@@ -25,8 +26,17 @@ public class MatriculasDAO extends AbstrataDAO{
         db_helper = new DBOpenHelper(context);
     }
 
-    public int Insert(){
-        return 0;
+    public void Insert(Matriculas matriculas){
+        ContentValues values = new ContentValues();
+        values.put(Matriculas.COLUNA_CODIGOMATICULA, matriculas.getCodigo_matricula());
+        values.put(Matriculas.COLUNA_CODIGOALUNO, matriculas.getCodigo_aluno());
+        values.put(Matriculas.COLUNA_DATAMATRICULA, matriculas.getData_matricula());
+        values.put(Matriculas.COLUNA_DATAVENCIMENTO, matriculas.getData_vencimento());
+        values.put(Matriculas.COLUNA_DATAENCERRAMENTO, matriculas.getData_encerramento());
+
+        open();
+        db.insert(MatriculaModalidades.TABELA_NOME, null, values);
+        close();
     }
 
     public int Delete(){
