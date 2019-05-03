@@ -16,6 +16,9 @@ public class UsuariosDAO extends AbstrataDAO{
         Usuarios.COLUNA_ID,
         Usuarios.COLUNA_USARIO,
         Usuarios.COLUNA_PERFIL,
+        Usuarios.COLUNA_NOME,
+        Usuarios.COLUNA_SOBRENOME,
+        Usuarios.COLUNA_SENHA
     };
 
     public UsuariosDAO(Context context){
@@ -27,7 +30,9 @@ public class UsuariosDAO extends AbstrataDAO{
         ContentValues value = new ContentValues();
         value.put(Usuarios.COLUNA_USARIO, usuarios.getUsuario());
         value.put(Usuarios.COLUNA_PERFIL, usuarios.getPerfil());
-
+        value.put(Usuarios.COLUNA_NOME, usuarios.getNome());
+        value.put(Usuarios.COLUNA_SOBRENOME, usuarios.getSobreNome());
+        value.put(Usuarios.COLUNA_SENHA, usuarios.getSenha());
 
         open();
 
