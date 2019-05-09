@@ -35,6 +35,9 @@ public class Usuarios {
     private String nome;
     private String sobreNome;
     private String senha;
+    private String id;
+
+
 
     public String getNome() {
         return nome;
@@ -74,6 +77,14 @@ public class Usuarios {
 
     public void setPerfil(String perfil) {
         this.perfil = perfil;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 }
 

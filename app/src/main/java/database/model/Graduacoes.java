@@ -26,6 +26,7 @@ public class Graduacoes {
 
     private String  modalidade;
     private String graduacao;
+    private String id;
 
 
     public String getModalidade() {
@@ -42,6 +43,14 @@ public class Graduacoes {
 
     public void setGraduacao(String graduacao) {
         this.graduacao = graduacao;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 }
 

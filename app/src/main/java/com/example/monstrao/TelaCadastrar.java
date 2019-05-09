@@ -44,6 +44,8 @@ public class TelaCadastrar extends AppCompatActivity {
                 users.setPerfil("Completo");
 
                 usuariosDAO.Insert(users);
+
+                finish();
             }
         });
     }

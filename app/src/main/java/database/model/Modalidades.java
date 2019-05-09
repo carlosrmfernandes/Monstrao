@@ -23,7 +23,7 @@ public class Modalidades {
 
 
     private String modalidade;
-    String teste;
+    private String id;
 
     public String getModalidade() {
         return modalidade;
@@ -31,5 +31,13 @@ public class Modalidades {
 
     public void setModalidade(String modalidade) {
         this.modalidade = modalidade;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 }

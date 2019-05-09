@@ -16,7 +16,7 @@ public class Planos {
             CREAT_TABLE =
             "create table" + TABELA_NOME
                     + "("
-                    + COLUNA_ID + "integer primary kay autoincrement,"
+                    + COLUNA_ID + " integer primary kay autoincrement,"
                     + COLUNA_MODALIDAE + " text not null,"
                     + COLUNA_PLANO + " text not null,"
                     + COLUNA_PLANO + " text not null,"
@@ -30,6 +30,7 @@ public class Planos {
     private String modalidade;
     private String plano;
     private Double valor_mensal;
+    private String id;
 
 
     public String getModalidade() {
@@ -54,6 +55,14 @@ public class Planos {
 
     public void setValor_mensal(Double valor_mensal) {
         this.valor_mensal = valor_mensal;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 }
 

@@ -2,11 +2,13 @@ package database.dao;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 
 import database.db.DBOpenHelper;
 
 import database.model.Alunos;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class AlunosDAO extends AbstrataDAO {
@@ -68,7 +70,56 @@ public class AlunosDAO extends AbstrataDAO {
     public int Update(){
         return 0;
     }
+
+
     public List<Alunos> Select(){
-        return null;
+        List<Alunos> alunos= new ArrayList<>();
+        open();
+        Cursor cursor= db.query(Alunos.TABELA_NOME, colunas, null, null, null, null, null);
+        cursor.moveToFirst();
+        while (!cursor.isAfterLast()){
+            alunos.add(CursorToStructure(cursor));
+            cursor.moveToNext();
+        }
+        cursor.close();
+        close();
+        return (alunos);
+    }
+
+    public boolean SelectAluno(final String id){
+        boolean isExist = false;
+
+        open();
+        Cursor cursor= db.query(Alunos.TABELA_NOME, colunas, Alunos.COLUNA_ID+" = ? and ", new String[]{id}, null, null, null);
+        cursor.moveToFirst();
+        while (!cursor.isAfterLast()){
+            isExist = true;
+            cursor.moveToNext();
+        }
+        cursor.close();
+        close();
+        return (isExist);
+    }
+    public final Alunos CursorToStructure(Cursor cursor){
+
+        Alunos al= new Alunos();
+        al.setId(cursor.getString(0));
+        al.setCodigo_aluno(cursor.getString(1));
+        al.setNome(cursor.getString(2));
+        al.setData_nascimento(cursor.getString(3));
+        al.setSexo(cursor.getString(4));
+        al.setTelefone(cursor.getString(5));
+        al.setCelular(cursor.getString(6));
+        al.setEmail(cursor.getString(7));
+        al.setObservacao(cursor.getString(8));
+        al.setEndereco(cursor.getString(9));
+        al.setNumero(cursor.getString(10));
+        al.setComplemento(cursor.getString(11));
+        al.setBairro(cursor.getString(12));
+        al.setCidade(cursor.getString(13));
+        al.setEstado(cursor.getString(14));
+        al.setPais(cursor.getString(15));
+        al.setCep(cursor.getString(16));
+        return al;
     }
 }

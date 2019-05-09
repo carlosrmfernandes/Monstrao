@@ -3,7 +3,9 @@ package database.dao;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import database.db.DBOpenHelper;
@@ -46,6 +48,41 @@ public class PlanosDAO extends AbstrataDAO{
     }
 
     public List<Planos> Select(){
-        return null;
+        List<Planos> pl= new ArrayList<>();
+        open();
+        Cursor cursor= db.query(Modalidades.TABELA_NOME, colunas, null, null, null, null, null);
+        cursor.moveToFirst();
+        while (!cursor.isAfterLast()){
+            pl.add(CursorToStructure(cursor));
+            cursor.moveToNext();
+        }
+        cursor.close();
+        close();
+        return (pl);
     }
+    public final Planos CursorToStructure(Cursor cursor){
+
+        Planos gr= new Planos();
+
+        gr.setId(cursor.getString(0));
+        gr.setModalidade(cursor.getString(1));
+        gr.setPlano(cursor.getString(2));
+        gr.setValor_mensal(cursor.getDouble(3));
+        return gr;
+    }
+    public boolean SelectAluno(final String id){
+        boolean isExist = false;
+
+        open();
+        Cursor cursor= db.query(Planos.TABELA_NOME, colunas, Planos.COLUNA_ID+" = ? and ", new String[]{id}, null, null, null);
+        cursor.moveToFirst();
+        while (!cursor.isAfterLast()){
+            isExist = true;
+            cursor.moveToNext();
+        }
+        cursor.close();
+        close();
+        return (isExist);
+    }
+
 }

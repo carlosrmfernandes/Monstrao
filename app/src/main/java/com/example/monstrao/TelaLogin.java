@@ -7,6 +7,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
+
+import database.dao.UsuariosDAO;
+import database.model.Usuarios;
 
 
 public class TelaLogin extends AppCompatActivity {
@@ -24,18 +28,26 @@ public class TelaLogin extends AppCompatActivity {
         edtEmail = findViewById(R.id.txtEmail);
         edtSenha = findViewById(R.id.txtSenha);
         btnContinuar = findViewById(R.id.btnContinuar);
+        btnContinuar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                UsuariosDAO usuariosDAO = new UsuariosDAO(TelaLogin.this);
+                if (usuariosDAO.SelectUsuario(edtEmail.getText().toString(), edtSenha.getText().toString()))
+                {
+                    Toast.makeText(TelaLogin.this, "EXISTE O USUARIO", Toast.LENGTH_LONG).show();
+                }
+                else {
+                    Toast.makeText(TelaLogin.this, "USUÁRIO INEXISTENTE", Toast.LENGTH_LONG).show();
+                }
+            }
+        });
+
         btnCriarConta = findViewById(R.id.btnCriarConta);
-
-        final Boolean possuiC = false;
-
         btnCriarConta.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                if(possuiC){
-                    edtSenha.setVisibility(View.VISIBLE);
-                }else{
-                    startActivity(new Intent(TelaLogin.this, TelaCadastrar.class));
-                }
+                startActivity(new Intent(TelaLogin.this, TelaCadastrar.class));
             }
         });
 

@@ -2,7 +2,9 @@ package database.dao;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import database.db.DBOpenHelper;
@@ -38,7 +40,39 @@ public class GraduacoesDAO extends  AbstrataDAO{
         return 0;
     }
     public List<Graduacoes> Select(){
-        return null;
+        List<Graduacoes> gr= new ArrayList<>();
+        open();
+        Cursor cursor= db.query(Graduacoes.TABELA_NOME, colunas, null, null, null, null, null);
+        cursor.moveToFirst();
+        while (!cursor.isAfterLast()){
+            gr.add(CursorToStructure(cursor));
+            cursor.moveToNext();
+        }
+        cursor.close();
+        close();
+        return (gr);
+    }
+    public final Graduacoes CursorToStructure(Cursor cursor){
+
+        Graduacoes gr= new Graduacoes();
+        gr.setId(cursor.getString(0));
+        gr.setModalidade(cursor.getString(1));
+        gr.setGraduacao(cursor.getString(2));
+        return gr;
+    }
+    public boolean SelectAluno(final String id){
+        boolean isExist = false;
+
+        open();
+        Cursor cursor= db.query(Graduacoes.TABELA_NOME, colunas, Graduacoes.COLUNA_ID+" = ? and ", new String[]{id}, null, null, null);
+        cursor.moveToFirst();
+        while (!cursor.isAfterLast()){
+            isExist = true;
+            cursor.moveToNext();
+        }
+        cursor.close();
+        close();
+        return (isExist);
     }
 
 }
