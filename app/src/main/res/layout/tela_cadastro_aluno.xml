@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.LinearLayoutCompat
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="20dp"
+        android:paddingBottom="30dp"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/edt_nome"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="nome"/>
+
+        <EditText
+            android:inputType="date"
+            android:id="@+id/edt_data_nascimento"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="data de nascimento"
+            android:layout_marginTop="10dp"/>
+        <EditText
+            android:id="@+id/edt_sexo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="sexo"
+            android:layout_marginTop="10dp"/>
+        <EditText
+            android:id="@+id/edt_telefone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="telefone"
+            android:layout_marginTop="10dp"/>
+        <EditText
+            android:id="@+id/edt_celular"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="celular"
+            android:layout_marginTop="10dp"/>
+        <EditText
+            android:id="@+id/edt_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="e-mail"
+            android:layout_marginTop="10dp"/>
+        <EditText
+            android:id="@+id/edt_observacao"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="observação"
+            android:layout_marginTop="10dp"/>
+        <EditText
+            android:id="@+id/edt_endereco"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="endereço"
+            android:layout_marginTop="10dp"/>
+        <EditText
+            android:id="@+id/edt_numero"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="numero"
+            android:layout_marginTop="10dp"/>
+        <EditText
+            android:id="@+id/edt_complemento"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="complemento"
+            android:layout_marginTop="10dp"/>
+        <EditText
+            android:id="@+id/edt_bairro"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="bairro"
+            android:layout_marginTop="10dp"/>
+        <EditText
+            android:id="@+id/edt_cidade"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="cidade"
+            android:layout_marginTop="10dp"/>
+        <EditText
+            android:id="@+id/edt_estado"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="estado"
+            android:layout_marginTop="10dp"/>
+        <EditText
+            android:id="@+id/edt_pais"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="pais"
+            android:layout_marginTop="10dp"/>
+        <EditText
+            android:id="@+id/edt_cep"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="cep"
+            android:layout_marginTop="10dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:layout_weight="10">
+
+            <Button
+                android:id="@+id/cadastro_aluno_confirmar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="CONFIRMAR"
+                android:padding="10dp"
+                android:layout_weight="5"/>
+            <Button
+                android:id="@+id/cadastro_aluno_limpar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="LIMPAR"
+                android:padding="10dp"
+                android:layout_weight="5"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    </ScrollView>
+
+</android.support.v7.widget.LinearLayoutCompat>
