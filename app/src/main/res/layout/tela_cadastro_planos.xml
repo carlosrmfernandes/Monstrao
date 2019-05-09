@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.LinearLayoutCompat
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_margin="20dp"
+        android:paddingBottom="10dp">
+
+        <EditText
+            android:id="@+id/edt_planos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="modalidade"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:layout_weight="10">
+
+            <Button
+                android:id="@+id/cadastro_planos_confirmar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="CONFIRMAR"
+                android:padding="10dp"
+                android:layout_weight="5"/>
+            <Button
+                android:id="@+id/cadastro_planos_limpar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="LIMPAR"
+                android:padding="10dp"
+                android:layout_weight="5"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</android.support.v7.widget.LinearLayoutCompat>
