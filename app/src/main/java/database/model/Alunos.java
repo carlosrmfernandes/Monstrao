@@ -26,25 +26,25 @@ public class Alunos {
 
     public static final String
             CREATE_TABLE =
-            "create table" + TABELA_NOME
+            "create table " + TABELA_NOME
                     + "("
-                    + COLUNA_ID + "integer primary key autoincrement,"
-                    + COLUNA_CODIGO_ALUNO + "text not null,"
-                    + COLUNA_NOME + "text not null,"
-                    + COLUNA_DATA_NASCIMENTO + "text not null,"
-                    + COLUNA_SEXO + "text not null,"
-                    + COLUNA_TELEFONE + "text not null,"
-                    + COLUNA_CELULAR + "text not null,"
-                    + COLUNA_EMAIL + "text not null,"
-                    + COLUNA_OBSERVACAO + "text not null,"
-                    + COLUNA_ENDERECO + "text not null,"
-                    + COLUNA_NUMERO + "text not null,"
-                    + COLUNA_COMPLEMENTO + "text not null,"
-                    + COLUNA_BAIRRO + "text not null,"
-                    + COLUNA_CIDADE + "text not null,"
-                    + COLUNA_ESTADO + "text not null,"
-                    + COLUNA_PAIS + "text not null,"
-                    + COLUNA_CEP + "text not null,"
+                    + COLUNA_ID + " integer primary key autoincrement, "
+                    + COLUNA_CODIGO_ALUNO + " text not null, "
+                    + COLUNA_NOME + " text not null, "
+                    + COLUNA_DATA_NASCIMENTO + " text not null, "
+                    + COLUNA_SEXO + " text not null, "
+                    + COLUNA_TELEFONE + " text not null, "
+                    + COLUNA_CELULAR + " text not null, "
+                    + COLUNA_EMAIL + " text not null, "
+                    + COLUNA_OBSERVACAO + " text not null, "
+                    + COLUNA_ENDERECO + " text not null, "
+                    + COLUNA_NUMERO + " text not null, "
+                    + COLUNA_COMPLEMENTO + " text not null, "
+                    + COLUNA_BAIRRO + " text not null, "
+                    + COLUNA_CIDADE + " text not null, "
+                    + COLUNA_ESTADO + " text not null, "
+                    + COLUNA_PAIS + " text not null, "
+                    + COLUNA_CEP + " text not null "
                     + ");";
 
     public static final String

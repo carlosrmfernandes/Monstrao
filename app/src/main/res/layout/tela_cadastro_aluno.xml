@@ -4,6 +4,19 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text=" CADASTRAR ALUNO"
+            android:textSize="20dp"
+            android:textAlignment="center"/>
+    </LinearLayout>
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -114,14 +127,14 @@
             android:layout_weight="10">
 
             <Button
-                android:id="@+id/cadastro_aluno_confirmar"
+                android:id="@+id/btn_cadastro_aluno_confirmar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="CONFIRMAR"
                 android:padding="10dp"
                 android:layout_weight="5"/>
             <Button
-                android:id="@+id/cadastro_aluno_limpar"
+                android:id="@+id/btn_cadastro_aluno_limpar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="LIMPAR"
