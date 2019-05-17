@@ -23,7 +23,7 @@ public class ModalidadesDAO extends AbstrataDAO{
         db_helper = new DBOpenHelper(context);
     }
 
-    public void Insert(Modalidades modalidades){
+    public void insert(Modalidades modalidades){
 
         ContentValues value = new ContentValues();
         value.put(Modalidades.COLUNA_MODALIDAE, modalidades.getModalidade());
@@ -47,7 +47,7 @@ public class ModalidadesDAO extends AbstrataDAO{
     public List<Modalidades> Select(){
         List<Modalidades> modalidade= new ArrayList<>();
         open();
-        Cursor cursor= db.query(Modalidades.TABELA_NOME, colunas, null, null, null, null, null);
+        Cursor cursor= db.query(Modalidades.TABELA_NOME, colunas, null, null, null, null, "_id");
         cursor.moveToFirst();
         while (!cursor.isAfterLast()){
             modalidade.add(CursorToStructure(cursor));

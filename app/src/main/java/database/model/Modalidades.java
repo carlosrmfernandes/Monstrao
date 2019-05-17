@@ -10,12 +10,12 @@ public class Modalidades {
             COLUNA_MODALIDAE = "modalidade";
 
     public static final String
-            CREAT_TABLE =
-            "create table" + TABELA_NOME
+            CREATE_TABLE =
+            "create table " + TABELA_NOME
                     + "("
-                    + COLUNA_ID + "integer primary kay autoincrement,"
-                    + COLUNA_MODALIDAE + " text not null,"
-            +");";
+                    + COLUNA_ID + "  integer primary key autoincrement, "
+                    + COLUNA_MODALIDAE + "  text not null "
+                    + ");";
 
     public static final String
 

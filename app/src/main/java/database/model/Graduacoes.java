@@ -3,22 +3,20 @@ package database.model;
 public class Graduacoes {
 
     public static final String
-            TABELA_NOME = "cidade";
+            TABELA_NOME = "graducoes";
 
     public static final String
             COLUNA_ID = "_id",
-            MODALIDADE = "cidade",
-            GRADUACAO= "estado";
-
-
+            GRADUACAO= "graducao",
+            MODALIDADE = "modalidade";
 
     public static final String
             CREATE_TABLE =
-            "create table" + TABELA_NOME
+            "create table " + TABELA_NOME
                     + "("
-                    + COLUNA_ID + "integer primary key autoincrement,"
-                    + MODALIDADE + "text not null,"
-                    + GRADUACAO+ "text not null,"
+                    + COLUNA_ID + " integer primary key autoincrement, "
+                    + MODALIDADE + " text not null, "
+                    + GRADUACAO+ " text not null "
                     + ");";
 
     public static final String

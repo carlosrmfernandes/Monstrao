@@ -9,22 +9,22 @@ public class Planos {
             COLUNA_ID = "_id",
             COLUNA_MODALIDAE = "modalidade",
             COLUNA_PLANO = "plano",
-            COLUNA_VALORMENSAL = "valor mensal";
+            COLUNA_VALORMENSAL = "valor_mensal";
 
 
     public static final String
-            CREAT_TABLE =
-            "create table" + TABELA_NOME
+            CREATE_TABLE =
+            "create table " + TABELA_NOME
                     + "("
-                    + COLUNA_ID + " integer primary kay autoincrement,"
-                    + COLUNA_MODALIDAE + " text not null,"
-                    + COLUNA_PLANO + " text not null,"
-                    + COLUNA_PLANO + " text not null,"
+                    + COLUNA_ID + " integer primary key autoincrement, "
+                    + COLUNA_MODALIDAE + " text not null, "
+                    + COLUNA_PLANO + " text not null, "
+                    + COLUNA_VALORMENSAL + " text not null "
                     + ");";
 
     public static final String
 
-            DROP_TABLE = " drop table if exists" + TABELA_NOME + ";";
+            DROP_TABLE = " drop table if exists " + TABELA_NOME + ";";
 
 
     private String modalidade;

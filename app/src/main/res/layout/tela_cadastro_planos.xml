@@ -24,11 +24,24 @@
         android:layout_margin="20dp"
         android:paddingBottom="10dp">
 
+            <Spinner android:id="@+id/modalidade"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                />
+
         <EditText
             android:id="@+id/edt_planos"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="modalidade"/>
+            android:hint="plano"/>
+        <EditText
+            android:id="@+id/edt_valor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="valor"/>
+
+
 
         <LinearLayout
             android:layout_width="match_parent"
