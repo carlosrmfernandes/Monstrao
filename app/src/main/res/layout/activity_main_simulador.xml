@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/btnCadastrarAlunos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="CADASTRO ALUNOS"/>
+
+    <Button
+        android:id="@+id/btnCadastrarModalidade"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="CADASTRO MODALIDADES"/>
+
+    <Button
+        android:id="@+id/btnCadastrarGraduacao"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="CADASTRO GRADUACOES"/>
+
+    <Button
+        android:id="@+id/btnCadastrarPlano"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="CADASTRO PLANO"/>
+
+    <Button
+        android:id="@+id/btnMatricular"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="MATRICULAR"/>
+
+</LinearLayout>

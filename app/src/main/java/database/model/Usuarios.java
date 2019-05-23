@@ -27,7 +27,7 @@ public class Usuarios {
                     + ");";
 
     public static final String
-            DROP_TABLE = " drop table if exists" + TABELA_NOME + ";";
+            DROP_TABLE = " drop table if exists " + TABELA_NOME + ";";
 
 
     private String usuario;

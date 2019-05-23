@@ -16,7 +16,7 @@ public class DBOpenHelper extends SQLiteOpenHelper {
     DATABASE_NOME = "banco.db";
 
     private static final int
-    DATABASE_VERSAO = 9;
+    DATABASE_VERSAO = 11;
 
     public DBOpenHelper(Context context){
         super(context, DATABASE_NOME, null, DATABASE_VERSAO);
@@ -30,14 +30,19 @@ public class DBOpenHelper extends SQLiteOpenHelper {
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion){
 
-        if (newVersion > 5) {
+        if(DATABASE_VERSAO<11){
+            db.execSQL(Planos.DROP_TABLE);
+            db.execSQL(Graduacoes.Drop_TABLE);
+            db.execSQL(Modalidades.DROP_TABLE);
+            db.execSQL(Alunos.Drop_TABLE);
+            db.execSQL(Usuarios.DROP_TABLE);
+
             db.execSQL(Planos.CREATE_TABLE);
-        }
-        else {
             db.execSQL(Graduacoes.CREATE_TABLE);
             db.execSQL(Modalidades.CREATE_TABLE);
             db.execSQL(Alunos.CREATE_TABLE);
             db.execSQL(Usuarios.CREAT_TABLE);
         }
+
     }
 }
