@@ -7,10 +7,9 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.Spinner;
-import android.widget.Toast;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import database.dao.GraduacoesDAO;
@@ -25,18 +24,21 @@ public class TelaCadastroGraduacoes extends AppCompatActivity {
     private Button btnConfirmar;
     private Button btnLimpar;
     private ModalidadesDAO dao;
-
+    private ListView list;
+    private GraduacoesDAO daoGraduacoes;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.tela_cadastro_graduacoes);
 
         dao = new ModalidadesDAO(this);
+        daoGraduacoes = new GraduacoesDAO(this);
 
         edtGraduacao = findViewById(R.id.edt_graduacoes);
         btnConfirmar = findViewById(R.id.cadastro_graduacoes_confirmar);
         btnLimpar = findViewById(R.id.cadastro_graduacoes_limpar);
         modalidade = findViewById(R.id.modalidade);
+        list = findViewById(R.id.list_graduacoes);
 
         btnConfirmar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -47,6 +49,7 @@ public class TelaCadastroGraduacoes extends AppCompatActivity {
                 grad.setGraduacao(edtGraduacao.getText().toString());
                 grad.setModalidade(String.valueOf(modalidade.getSelectedItemId()+1));
                 gradDao.Insert(grad);
+                lit();
             }
         });
         btnLimpar.setOnClickListener(new View.OnClickListener() {
@@ -74,6 +77,17 @@ public class TelaCadastroGraduacoes extends AppCompatActivity {
         else {
 
         }
+        lit();
 
+    }
+    void lit(){
+        List<Graduacoes> mod = daoGraduacoes.Select();
+        String[] graduacoes = new String[mod.size()];
+        for (int i = 0; i < mod.size(); i++) {
+            graduacoes[i] = mod.get(i).getGraduacao();
+        }
+        if (graduacoes.length > 0) {
+            list.setAdapter(new ArrayAdapter<String>(this,  android.R.layout.simple_list_item_1, graduacoes));
+        }
     }
 }

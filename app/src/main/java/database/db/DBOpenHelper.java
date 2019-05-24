@@ -17,7 +17,7 @@ public class DBOpenHelper extends SQLiteOpenHelper {
     DATABASE_NOME = "banco.db";
 
     private static final int
-    DATABASE_VERSAO = 12;
+    DATABASE_VERSAO = 13;
 
     public DBOpenHelper(Context context){
         super(context, DATABASE_NOME, null, DATABASE_VERSAO);
@@ -45,6 +45,9 @@ public class DBOpenHelper extends SQLiteOpenHelper {
             db.execSQL(Modalidades.CREATE_TABLE);
             db.execSQL(Alunos.CREATE_TABLE);
             db.execSQL(Usuarios.CREAT_TABLE);
+        }
+        else {
+            db.execSQL(Matriculas.CREATE_TABLE);
         }
 
     }

@@ -50,7 +50,7 @@ public class PlanosDAO extends AbstrataDAO{
     public List<Planos> Select(){
         List<Planos> pl= new ArrayList<>();
         open();
-        Cursor cursor= db.query(Modalidades.TABELA_NOME, colunas, null, null, null, null, null);
+        Cursor cursor= db.query(Planos.TABELA_NOME, colunas, null, null, null, null, null);
         cursor.moveToFirst();
         while (!cursor.isAfterLast()){
             pl.add(CursorToStructure(cursor));

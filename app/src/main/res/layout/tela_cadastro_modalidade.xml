@@ -52,7 +52,14 @@
                 android:layout_weight="5"/>
 
         </LinearLayout>
-        
+        <ListView
+            android:id="@+id/list_modalidades"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp">
+
+        </ListView>
     </LinearLayout>
 
 </android.support.v7.widget.LinearLayoutCompat>

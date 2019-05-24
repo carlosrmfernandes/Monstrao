@@ -14,9 +14,9 @@ public class GraduacoesDAO extends  AbstrataDAO{
 
     private final String [] colunas =
             {
-                    Graduacoes.GRADUACAO,
-                    Graduacoes.MODALIDADE,
                     Graduacoes.COLUNA_ID,
+                    Graduacoes.MODALIDADE,
+                    Graduacoes.GRADUACAO
             };
     public  GraduacoesDAO (Context ao_Context){
         db_helper = new DBOpenHelper(ao_Context);
