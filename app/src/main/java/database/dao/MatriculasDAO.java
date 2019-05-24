@@ -28,14 +28,11 @@ public class MatriculasDAO extends AbstrataDAO{
 
     public void Insert(Matriculas matriculas){
         ContentValues values = new ContentValues();
-        values.put(Matriculas.COLUNA_CODIGOMATICULA, matriculas.getCodigo_matricula());
         values.put(Matriculas.COLUNA_CODIGOALUNO, matriculas.getCodigo_aluno());
         values.put(Matriculas.COLUNA_DATAMATRICULA, matriculas.getData_matricula());
-        values.put(Matriculas.COLUNA_DATAVENCIMENTO, matriculas.getData_vencimento());
-        values.put(Matriculas.COLUNA_DATAENCERRAMENTO, matriculas.getData_encerramento());
 
         open();
-        db.insert(MatriculaModalidades.TABELA_NOME, null, values);
+        db.insert(Matriculas.TABELA_NAME, null, values);
         close();
     }
 

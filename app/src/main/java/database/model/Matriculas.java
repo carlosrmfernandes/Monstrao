@@ -1,35 +1,35 @@
 package database.model;
 
 public class Matriculas {
-    private static final String
-            TABELA_NAME = "planos";
+    public static final String
+            TABELA_NAME = "matriculas";
 
     public static final String
 
             COLUNA_ID = "_id",
-            COLUNA_CODIGOMATICULA = "codigo matricula",
-            COLUNA_CODIGOALUNO = "codigo aluno",
-            COLUNA_DATAMATRICULA  = "data matricula",
-            COLUNA_DATAVENCIMENTO  = "data vencimento",
-            COLUNA_DATAENCERRAMENTO  = "data encerramento";
+            COLUNA_CODIGOMATICULA = "codigo_matricula",
+            COLUNA_CODIGOALUNO = "codigo_aluno",
+            COLUNA_DATAMATRICULA  = "data_matricula",
+            COLUNA_DATAVENCIMENTO  = "data_vencimento",
+            COLUNA_DATAENCERRAMENTO  = "data_encerramento";
 
 
 
     public static final String
-            CREAT_TABLE =
-            "create table" + TABELA_NAME
+            CREATE_TABLE =
+            "create table " + TABELA_NAME
                     + "("
-                    + COLUNA_ID + "integer primary kay autoincrement,"
-                    + COLUNA_CODIGOMATICULA + " text not null,"
-                    + COLUNA_CODIGOALUNO + " text not null,"
-                    + COLUNA_DATAMATRICULA + " text not null,"
-                    + COLUNA_DATAVENCIMENTO + " text not null,"
-                    + COLUNA_DATAENCERRAMENTO + " text not null,"
+                    + COLUNA_ID + " integer primary key autoincrement, "
+                    + COLUNA_CODIGOMATICULA + " integer not null, "
+                    + COLUNA_CODIGOALUNO + " integer not null, "
+                    + COLUNA_DATAMATRICULA + " text not null, "
+                    + COLUNA_DATAVENCIMENTO + " text, "
+                    + COLUNA_DATAENCERRAMENTO + " text "
                     + ");";
 
     public static final String
 
-            DROP_TABLE = " drop table if exists" + TABELA_NAME + ";";
+            DROP_TABLE = " drop table if exists " + TABELA_NAME + ";";
 
 
     private int  codigo_matricula;

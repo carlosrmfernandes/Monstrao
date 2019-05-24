@@ -9,7 +9,7 @@ import android.widget.Button;
 
 public class SimuladorMain extends AppCompatActivity {
 
-    private Button um, dois, tres, quatro;
+    private Button um, dois, tres, quatro, cinco;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -45,6 +45,14 @@ public class SimuladorMain extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(SimuladorMain.this, TelaCadastroPlanos.class));
+            }
+        });
+
+        cinco = findViewById(R.id.btnMatricular);
+        cinco.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(SimuladorMain.this, TelaCadastroMatriculas.class));
             }
         });
     }
