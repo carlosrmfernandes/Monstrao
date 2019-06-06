@@ -71,13 +71,14 @@ public class TelaCadastroMatriculas extends AppCompatActivity {
             ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_spinner_item, alunos);
             s.setAdapter(adapter);
         }
+        lit();
 
     }
     void lit(){
         List<Matriculas> mod = daoMatricula.Select();
         String[] matricula = new String[mod.size()];
         for (int i = 0; i < mod.size(); i++) {
-            matricula[i] = String.valueOf(mod.get(i).getCodigo_matricula());
+            matricula[i] = String.valueOf("ID - " + mod.get(i).getCodigo_matricula() + " DATA: " +  mod.get(i).getData_matricula());
         }
         if (matricula.length > 0) {
             list.setAdapter(new ArrayAdapter<String>(this,  android.R.layout.simple_list_item_1, matricula));
