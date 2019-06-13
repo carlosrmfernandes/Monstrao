@@ -1,5 +1,6 @@
 package com.example.monstrao;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -10,12 +11,20 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Spinner;
 
+import com.ontbee.legacyforks.cn.pedant.SweetAlert.SweetAlertDialog;
+
 import java.util.List;
 
 import database.dao.GraduacoesDAO;
 import database.dao.ModalidadesDAO;
 import database.model.Graduacoes;
 import database.model.Modalidades;
+import retrofit.Api;
+import retrofit.model.GraduacoesModel;
+import retrofit.model.ModalidadeModel;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class TelaCadastroGraduacoes extends AppCompatActivity {
 
@@ -48,7 +57,48 @@ public class TelaCadastroGraduacoes extends AppCompatActivity {
 
                 grad.setGraduacao(edtGraduacao.getText().toString());
                 grad.setModalidade(String.valueOf(modalidade.getSelectedItemId()+1));
-                gradDao.Insert(grad);
+               // gradDao.Insert(grad);
+
+                GraduacoesModel g = new GraduacoesModel();
+                g.setDs_graduacao(edtGraduacao.getText().toString());
+                g.setId_modalidade(2);
+                g.setIdConta(21);
+                final SweetAlertDialog pDialog = new SweetAlertDialog(TelaCadastroGraduacoes. this, SweetAlertDialog. PROGRESS_TYPE);
+                pDialog.getProgressHelper().setBarColor(Color. parseColor("#f4971c"));
+                pDialog.setTitleText( "Enviando. Aguarde ...");
+                pDialog.setCancelable( false);
+                pDialog.show();
+
+
+                Api.PostGraduacoes(g, new Callback<Boolean>() {
+                    @Override
+                    public void onResponse(Call<Boolean> call, Response<Boolean> response) {
+
+                        pDialog.dismissWithAnimation();
+
+                        if(response != null && response.body() != null){
+
+
+                            System.out.println("***************** Inserido com sucesso  ");
+                            // Lançar erros
+                            new SweetAlertDialog(TelaCadastroGraduacoes. this, SweetAlertDialog. SUCCESS_TYPE)
+                                    .setTitleText( "Sucesso")
+                                    .setContentText( "Graduação inserido !")
+                                    .setConfirmClickListener( new SweetAlertDialog.OnSweetClickListener() {
+                                        @Override
+                                        public void onClick(SweetAlertDialog sweetAlertDialog) {
+                                            sweetAlertDialog.dismissWithAnimation();
+                                        }
+                                    })
+                                    .show();
+                        }
+                    }
+
+                    @Override
+                    public void onFailure(Call<Boolean> call, Throwable t) {
+
+                    }
+                });
                 lit();
             }
         });
