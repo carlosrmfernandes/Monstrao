@@ -7,32 +7,41 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:background="@color/colorFosco">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text=" CADASTRAR ALUNO"
             android:textSize="20dp"
-            android:textAlignment="center"/>
+            android:textAlignment="center"
+            android:textColor="@color/colorOrange"
+            android:textStyle="bold"
+            android:layout_margin="10dp"/>
     </LinearLayout>
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@color/colorCfort">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_margin="20dp"
         android:paddingBottom="30dp"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:background="@color/colorCfort"
+        android:padding="8dp">
 
         <EditText
             android:id="@+id/edt_nome"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="nome"/>
+            android:hint="nome"
+            android:textColorHint="@color/colorOrange"
+            android:textColor="@color/colorOrange"/>
 
         <EditText
             android:inputType="date"
@@ -40,85 +49,113 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="data de nascimento"
-            android:layout_marginTop="10dp"/>
+            android:layout_marginTop="10dp"
+            android:textColorHint="@color/colorOrange"
+            android:textColor="@color/colorOrange"/>
         <EditText
             android:id="@+id/edt_sexo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="sexo"
-            android:layout_marginTop="10dp"/>
+            android:layout_marginTop="10dp"
+            android:textColorHint="@color/colorOrange"
+            android:textColor="@color/colorOrange"/>
         <EditText
             android:id="@+id/edt_telefone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="telefone"
-            android:layout_marginTop="10dp"/>
+            android:layout_marginTop="10dp"
+            android:textColorHint="@color/colorOrange"
+            android:textColor="@color/colorOrange"/>
         <EditText
             android:id="@+id/edt_celular"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="celular"
-            android:layout_marginTop="10dp"/>
+            android:layout_marginTop="10dp"
+            android:textColorHint="@color/colorOrange"
+            android:textColor="@color/colorOrange"/>
         <EditText
             android:id="@+id/edt_email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="e-mail"
-            android:layout_marginTop="10dp"/>
+            android:layout_marginTop="10dp"
+            android:textColorHint="@color/colorOrange"
+            android:textColor="@color/colorOrange"/>
         <EditText
             android:id="@+id/edt_observacao"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="observação"
-            android:layout_marginTop="10dp"/>
+            android:layout_marginTop="10dp"
+            android:textColorHint="@color/colorOrange"
+            android:textColor="@color/colorOrange"/>
         <EditText
             android:id="@+id/edt_endereco"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="endereço"
-            android:layout_marginTop="10dp"/>
+            android:layout_marginTop="10dp"
+            android:textColorHint="@color/colorOrange"
+            android:textColor="@color/colorOrange"/>
         <EditText
             android:id="@+id/edt_numero"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="numero"
-            android:layout_marginTop="10dp"/>
+            android:layout_marginTop="10dp"
+            android:textColorHint="@color/colorOrange"
+            android:textColor="@color/colorOrange"/>
         <EditText
             android:id="@+id/edt_complemento"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="complemento"
-            android:layout_marginTop="10dp"/>
+            android:layout_marginTop="10dp"
+            android:textColorHint="@color/colorOrange"
+            android:textColor="@color/colorOrange"/>
         <EditText
             android:id="@+id/edt_bairro"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="bairro"
-            android:layout_marginTop="10dp"/>
+            android:layout_marginTop="10dp"
+            android:textColorHint="@color/colorOrange"
+            android:textColor="@color/colorOrange"/>
         <EditText
             android:id="@+id/edt_cidade"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="cidade"
-            android:layout_marginTop="10dp"/>
+            android:layout_marginTop="10dp"
+            android:textColorHint="@color/colorOrange"
+            android:textColor="@color/colorOrange"/>
         <EditText
             android:id="@+id/edt_estado"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="estado"
-            android:layout_marginTop="10dp"/>
+            android:layout_marginTop="10dp"
+            android:textColorHint="@color/colorOrange"
+            android:textColor="@color/colorOrange"/>
         <EditText
             android:id="@+id/edt_pais"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="pais"
-            android:layout_marginTop="10dp"/>
+            android:layout_marginTop="10dp"
+            android:textColorHint="@color/colorOrange"
+            android:textColor="@color/colorOrange"/>
         <EditText
             android:id="@+id/edt_cep"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="cep"
-            android:layout_marginTop="10dp"/>
+            android:layout_marginTop="10dp"
+            android:textColorHint="@color/colorOrange"
+            android:textColor="@color/colorOrange"/>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -132,14 +169,21 @@
                 android:layout_height="wrap_content"
                 android:text="CONFIRMAR"
                 android:padding="10dp"
-                android:layout_weight="5"/>
+                android:layout_weight="5"
+                android:background="@color/colorFosco"
+                android:textColor="@color/colorCinza"
+                android:layout_margin="1dp"/>
+
             <Button
                 android:id="@+id/btn_cadastro_aluno_limpar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="LIMPAR"
                 android:padding="10dp"
-                android:layout_weight="5"/>
+                android:layout_weight="5"
+                android:background="@color/colorFosco"
+                android:textColor="@color/colorCinza"
+                android:layout_margin="1dp"/>
 
         </LinearLayout>
 
@@ -149,7 +193,10 @@
             android:layout_height="wrap_content"
             android:text="BUSCAR"
             android:padding="10dp"
-            android:layout_weight="5"/>
+            android:layout_weight="5"
+            android:background="@color/colorFosco"
+            android:textColor="@color/colorCinza"
+            android:layout_margin="1dp"/>
 
     </LinearLayout>
 

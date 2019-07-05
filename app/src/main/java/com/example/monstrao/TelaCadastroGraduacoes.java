@@ -11,6 +11,7 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Spinner;
 
+import com.example.monstrao.util.MonstraoUtil;
 import com.ontbee.legacyforks.cn.pedant.SweetAlert.SweetAlertDialog;
 
 import java.util.List;
@@ -32,9 +33,11 @@ public class TelaCadastroGraduacoes extends AppCompatActivity {
     private Spinner modalidade;
     private Button btnConfirmar;
     private Button btnLimpar;
+    private Button btnBuscar;
     private ModalidadesDAO dao;
     private ListView list;
     private GraduacoesDAO daoGraduacoes;
+    Spinner s;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,10 +46,19 @@ public class TelaCadastroGraduacoes extends AppCompatActivity {
         dao = new ModalidadesDAO(this);
         daoGraduacoes = new GraduacoesDAO(this);
 
+        s = findViewById(R.id.modalidade);
+
         edtGraduacao = findViewById(R.id.edt_graduacoes);
         btnConfirmar = findViewById(R.id.cadastro_graduacoes_confirmar);
         btnLimpar = findViewById(R.id.cadastro_graduacoes_limpar);
         modalidade = findViewById(R.id.modalidade);
+        btnBuscar = findViewById(R.id.buscar_graduação);
+        btnBuscar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                lit();
+            }
+        });
         list = findViewById(R.id.list_graduacoes);
 
         btnConfirmar.setOnClickListener(new View.OnClickListener() {
@@ -61,7 +73,7 @@ public class TelaCadastroGraduacoes extends AppCompatActivity {
 
                 GraduacoesModel g = new GraduacoesModel();
                 g.setDs_graduacao(edtGraduacao.getText().toString());
-                g.setId_modalidade(2);
+                g.setId_modalidade(Long.valueOf(s.getSelectedItem().toString().split("-")[0]));
                 g.setIdConta(21);
                 final SweetAlertDialog pDialog = new SweetAlertDialog(TelaCadastroGraduacoes. this, SweetAlertDialog. PROGRESS_TYPE);
                 pDialog.getProgressHelper().setBarColor(Color. parseColor("#f4971c"));
@@ -69,16 +81,11 @@ public class TelaCadastroGraduacoes extends AppCompatActivity {
                 pDialog.setCancelable( false);
                 pDialog.show();
 
-
-                Api.PostGraduacoes(g, new Callback<Boolean>() {
+                Api.PostGraduacoes(g, new Callback<Long>() {
                     @Override
-                    public void onResponse(Call<Boolean> call, Response<Boolean> response) {
-
+                    public void onResponse(Call<Long> call, Response<Long> response) {
                         pDialog.dismissWithAnimation();
-
                         if(response != null && response.body() != null){
-
-
                             System.out.println("***************** Inserido com sucesso  ");
                             // Lançar erros
                             new SweetAlertDialog(TelaCadastroGraduacoes. this, SweetAlertDialog. SUCCESS_TYPE)
@@ -95,7 +102,7 @@ public class TelaCadastroGraduacoes extends AppCompatActivity {
                     }
 
                     @Override
-                    public void onFailure(Call<Boolean> call, Throwable t) {
+                    public void onFailure(Call<Long> call, Throwable t) {
 
                     }
                 });
@@ -105,39 +112,74 @@ public class TelaCadastroGraduacoes extends AppCompatActivity {
         btnLimpar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 edtGraduacao.setText("");
-
-
             }
         });
 
-        List<Modalidades> mod = dao.Select();
-        String[] modalidades = new String[mod.size()];
-        for (int i = 0; i < mod.size(); i++) {
-            modalidades[i] = mod.get(i).getModalidade();
-        }
+        if (MonstraoUtil.isNetworkAvailable(this)) {
+            Api.GetModalidade(21, new Callback<List<ModalidadeModel>>() {
+                @Override
+                public void onResponse(Call<List<ModalidadeModel>> call, Response<List<ModalidadeModel>> response) {
+                    if (response != null && response.body() != null && response.body().size() > 0) {
+                        List<ModalidadeModel> mod = response.body();
+                        String[] modalidades = new String[mod.size()];
+                        for (int i = 0; i < mod.size(); i++) {
+                            modalidades[i] = mod.get(i).getId() + "-" + mod.get(i).getNm_modalidade();
+                        }
+                        if (modalidades.length > 0) {
+                            s.setAdapter(new ArrayAdapter<String>(TelaCadastroGraduacoes.this,  android.R.layout.simple_list_item_1, modalidades));
+                        }
+                    }
+                }
+                @Override
+                public void onFailure(Call<List<ModalidadeModel>> call, Throwable t) {
 
-        Spinner s = findViewById(R.id.modalidade);
-
-        if (modalidades.length > 0) {
-            ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_spinner_item, modalidades);
-            s.setAdapter(adapter);
+                }
+            });
         }
         else {
-
+            List<Modalidades> mod = dao.Select();
+            String[] modalidades = new String[mod.size()];
+            for (int i = 0; i < mod.size(); i++) {
+                modalidades[i] = mod.get(i).getModalidade();
+            }
+            if (modalidades.length > 0) {
+                s.setAdapter(new ArrayAdapter<String>(this,  android.R.layout.simple_list_item_1, modalidades));
+            }
         }
-        lit();
 
     }
     void lit(){
-        List<Graduacoes> mod = daoGraduacoes.Select();
-        String[] graduacoes = new String[mod.size()];
-        for (int i = 0; i < mod.size(); i++) {
-            graduacoes[i] = mod.get(i).getGraduacao();
+        if (MonstraoUtil.isNetworkAvailable(this)) {
+            Api.GetGraduacoes(21, Long.valueOf(s.getSelectedItem().toString().split("-")[0]), new Callback<List<GraduacoesModel>>() {
+                @Override
+                public void onResponse(Call<List<GraduacoesModel>> call, Response<List<GraduacoesModel>> response) {
+                    if (response != null && response.body() != null && response.body().size() > 0) {
+                        List<GraduacoesModel> mod = response.body();
+                        String[] graduacoes = new String[mod.size()];
+                        for (int i = 0; i < mod.size(); i++) {
+                            graduacoes[i] = mod.get(i).getDs_graduacao();
+                        }
+                        if (graduacoes.length > 0) {
+                            list.setAdapter(new ArrayAdapter<String>(TelaCadastroGraduacoes.this,  android.R.layout.simple_list_item_1, graduacoes));
+                        }
+                    }
+                }
+                @Override
+                public void onFailure(Call<List<GraduacoesModel>> call, Throwable t) {
+
+                }
+            });
         }
-        if (graduacoes.length > 0) {
-            list.setAdapter(new ArrayAdapter<String>(this,  android.R.layout.simple_list_item_1, graduacoes));
+        else {
+            List<Graduacoes> mod = daoGraduacoes.Select();
+            String[] graduacoes = new String[mod.size()];
+            for (int i = 0; i < mod.size(); i++) {
+                graduacoes[i] = mod.get(i).getGraduacao();
+            }
+            if (graduacoes.length > 0) {
+                list.setAdapter(new ArrayAdapter<String>(this,  android.R.layout.simple_list_item_1, graduacoes));
+            }
         }
     }
 }

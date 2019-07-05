@@ -12,8 +12,8 @@ import retrofit2.http.Query;
 public interface GraduacoesEndpoint {
 
     @GET ("api/unesc/graduacao/buscar")
-    Call<List<GraduacoesModel>> buscarGraduacoes(@Query("id_conta") long id_conta);
+    Call<List<GraduacoesModel>> buscarGraduacoes(@Query("id_conta") long id_conta, @Query("id_modalidade") long id_modalidade);
 
     @POST("api/unesc/graduacao/incluir")
-    Call<Boolean> inserirGraduacoes(@Body GraduacoesModel g);
+    Call<Long> inserirGraduacoes(@Body GraduacoesModel g);
 }

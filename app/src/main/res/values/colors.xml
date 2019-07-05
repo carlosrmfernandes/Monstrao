@@ -7,5 +7,7 @@
     <color name="colorFoto">#929292</color>
     <color name="colorCfort">#8A8989</color>
     <color name="colorBlack">#000000</color>
+    <color name="colorOrange">#FF8247</color>
+    <color name="colorFosco">#353535</color>
 
 </resources>

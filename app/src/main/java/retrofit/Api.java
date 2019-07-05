@@ -31,9 +31,9 @@ public class Api {
         call.enqueue(callback);
     }
 
-    public static void PostAlunos(AlunoModel a, Callback<Boolean> callback) {
+    public static void PostAlunos(AlunoModel a, Callback<Long> callback) {
         AlunosEndpoint endpoint = retrofit.create(AlunosEndpoint. class);
-        Call<Boolean> call = endpoint.inserirAluno(a);
+        Call<Long> call = endpoint.inserirAluno(a);
         call.enqueue(callback);
     }
 
@@ -43,34 +43,46 @@ public class Api {
         call.enqueue(callback);
     }
 
-    public static void PostModalidade(ModalidadeModel m, Callback<Boolean> callback) {
+    public static void PostModalidade(ModalidadeModel m, Callback<Long> callback) {
         ModalidadeEndpoint endpoint = retrofit.create(ModalidadeEndpoint. class);
-        Call<Boolean> call = endpoint.inserirModalidade(m);
+        Call<Long> call = endpoint.inserirModalidade(m);
+        call.enqueue(callback);
+    }
+
+    public static void deleteModalidade(Long m, Callback<Boolean> callback) {
+        ModalidadeEndpoint endpoint = retrofit.create(ModalidadeEndpoint. class);
+        Call<Boolean> call = endpoint.deleteModalida(m);
         call.enqueue(callback);
     }
 
 
-    public static void GetGraduacoes(long id_conta, Callback<List<GraduacoesModel>> callback) {
+    public static void GetGraduacoes(long id_conta, long id_modalidade, Callback<List<GraduacoesModel>> callback) {
         GraduacoesEndpoint endpoint = retrofit.create(GraduacoesEndpoint. class);
-        Call<List<GraduacoesModel>> call = endpoint.buscarGraduacoes(id_conta);
+        Call<List<GraduacoesModel>> call = endpoint.buscarGraduacoes(id_conta, id_modalidade);
         call.enqueue(callback);
     }
 
-    public static void PostGraduacoes(GraduacoesModel g, Callback<Boolean> callback) {
+    public static void PostGraduacoes(GraduacoesModel g, Callback<Long> callback) {
         GraduacoesEndpoint endpoint = retrofit.create(GraduacoesEndpoint. class);
-        Call<Boolean> call = endpoint.inserirGraduacoes(g);
+        Call<Long> call = endpoint.inserirGraduacoes(g);
         call.enqueue(callback);
     }
 
-    public static void GetPlanos(long id_conta, Callback<List<PlanosModel>> callback) {
+    public static void GetPlanos(long id_conta, long id_modalidade, Callback<List<PlanosModel>> callback) {
         PlanosEndpoint endpoint = retrofit.create(PlanosEndpoint. class);
-        Call<List<PlanosModel>> call = endpoint.buscarPlanos(id_conta);
+        Call<List<PlanosModel>> call = endpoint.buscarPlanos(id_conta, id_modalidade);
         call.enqueue(callback);
     }
 
-    public static void PostPlanos(PlanosModel p, Callback<Boolean> callback) {
+    public static void PostPlanos(PlanosModel p, Callback<Long> callback) {
         PlanosEndpoint endpoint = retrofit.create(PlanosEndpoint. class);
-        Call<Boolean> call = endpoint.inserirPlanos(p);
+        Call<Long> call = endpoint.inserirPlanos(p);
+        call.enqueue(callback);
+    }
+
+    public static void DeletePlanos(PlanosModel p, Callback<Long> callback) {
+        PlanosEndpoint endpoint = retrofit.create(PlanosEndpoint. class);
+        Call<Long> call = endpoint.inserirPlanos(p);
         call.enqueue(callback);
     }
 }

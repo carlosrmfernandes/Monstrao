@@ -100,9 +100,9 @@ public class TelaCadastroAluno extends AppCompatActivity {
                 pDialog.show();
 
 
-                Api.PostAlunos(a, new Callback<Boolean>() {
+                Api.PostAlunos(a, new Callback<Long>() {
                     @Override
-                    public void onResponse(Call<Boolean> call, Response<Boolean> response) {
+                    public void onResponse(Call<Long> call, Response<Long> response) {
 
                         pDialog.dismissWithAnimation();
 
@@ -124,9 +124,10 @@ public class TelaCadastroAluno extends AppCompatActivity {
                         }
                     }
 
-                    @Override
-                    public void onFailure(Call<Boolean> call, Throwable t) {
 
+                    @Override
+                    public void onFailure(Call<Long> call, Throwable t) {
+                    t.printStackTrace();
                     }
                 });
 

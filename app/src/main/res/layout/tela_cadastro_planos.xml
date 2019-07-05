@@ -63,6 +63,13 @@
                 android:text="LIMPAR"
                 android:padding="10dp"
                 android:layout_weight="5"/>
+            <Button
+                android:id="@+id/buscar_planos"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="BUSCAR PLAN."
+                android:padding="10dp"
+                android:layout_weight="5"/>
 
         </LinearLayout>
         <ListView

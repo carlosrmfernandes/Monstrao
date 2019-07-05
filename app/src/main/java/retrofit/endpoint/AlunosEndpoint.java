@@ -15,5 +15,5 @@ public interface AlunosEndpoint  {
     Call<List<AlunoModel>> buscarAlunos(@Query("id_conta") long id_conta);
 
     @POST("api/unesc/aluno/incluir")
-    Call<Boolean> inserirAluno(@Body AlunoModel a);
+    Call<Long> inserirAluno(@Body AlunoModel a);
 }

@@ -62,6 +62,14 @@
                 android:text="LIMPAR"
                 android:padding="10dp"
                 android:layout_weight="5"/>
+            <Button
+                android:id="@+id/buscar_graduação"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="BUSCAR GRAD."
+                android:padding="10dp"
+                android:layout_weight="5"/>
+
 
         </LinearLayout>
         <ListView

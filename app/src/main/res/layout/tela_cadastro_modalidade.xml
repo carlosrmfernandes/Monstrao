@@ -29,12 +29,18 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="modalidade"/>
+        <EditText
+            android:id="@+id/id_delete"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Digite id deletar"/>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="horizontal"
             android:layout_weight="10">
+
 
             <Button
                 android:id="@+id/cadastro_modalidade_confirmar"
@@ -48,6 +54,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="LIMPAR"
+                android:padding="10dp"
+                android:layout_weight="5"/>
+            <Button
+                android:id="@+id/delete_mod"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="EXCLUIR"
                 android:padding="10dp"
                 android:layout_weight="5"/>
 
